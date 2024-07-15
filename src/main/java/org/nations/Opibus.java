@@ -7,7 +7,7 @@ import org.nations.listener.BlockPlaceListener;
 
 import java.util.logging.Logger;
 
-public final class Nations extends JavaPlugin {
+public final class Opibus extends JavaPlugin {
 
     HikariCP hikari;
     Logger logger;

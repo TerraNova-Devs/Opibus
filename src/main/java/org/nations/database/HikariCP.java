@@ -3,7 +3,7 @@ package org.nations.database;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.jetbrains.annotations.NotNull;
-import org.nations.Nations;
+import org.nations.Opibus;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -14,7 +14,7 @@ import java.util.*;
 
 public class HikariCP {
 
-    private final Nations plugin;
+    private final Opibus plugin;
     
     public HikariDataSource dataSource;
 
@@ -22,7 +22,7 @@ public class HikariCP {
     private final String password = "";
 
 
-    public HikariCP(Nations plugin) throws SQLException {
+    public HikariCP(Opibus plugin) throws SQLException {
         this.plugin = plugin;
         HikariConfig config = getHikariConfig();
         dataSource = new HikariDataSource(config);
