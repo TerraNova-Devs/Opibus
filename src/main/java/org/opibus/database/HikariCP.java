@@ -1,9 +1,9 @@
-package org.nations.database;
+package org.opibus.database;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.jetbrains.annotations.NotNull;
-import org.nations.Opibus;
+import org.opibus.Opibus;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
