@@ -70,6 +70,7 @@ public class BlockPlaceListener implements Listener {
                 return chance;
             }
         }
+
         return 0;
     }
 }
