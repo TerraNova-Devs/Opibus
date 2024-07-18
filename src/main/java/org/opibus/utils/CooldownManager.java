@@ -1,4 +1,4 @@
-package org.nations.utils;
+package org.opibus.utils;
 
 import java.time.Duration;
 import java.time.Instant;

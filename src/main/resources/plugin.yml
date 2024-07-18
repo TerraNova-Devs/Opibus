@@ -1,4 +1,4 @@
-name: Nations
+name: Opibus
 version: '${version}'
-main: org.nations.Nations
+main: org.opibus.Opibus
 api-version: '1.21'
