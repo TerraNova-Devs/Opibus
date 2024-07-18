@@ -29,6 +29,7 @@ public class BlockPlaceListener implements Listener {
         key = new NamespacedKey(plugin, "wasPlaced");
     }
 
+    
     @EventHandler
     public void onBlockPlace(BlockPlaceEvent event) {
         if (!isPresent(event.getBlockPlaced().getType()) || isExcluded(event.getBlock().getType()))
