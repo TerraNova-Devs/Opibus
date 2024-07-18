@@ -52,7 +52,7 @@ public class SilverManager {
         world.playSound(location, Sound.BLOCK_BELL_RESONATE, 2, 14);
     }
 
-    
+
     public void setPlaceHolder(ItemStack placeHolder) {
         this.placeHolder = placeHolder;
     }
