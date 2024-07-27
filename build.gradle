@@ -27,7 +27,7 @@ repositories {
 
 dependencies {
     compileOnly fileTree(dir: 'jars', include: ['*.jar'])
-    compileOnly("io.papermc.paper:paper-api:1.20.1-R0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:1.21-R0.1-SNAPSHOT")
     implementation "com.zaxxer:HikariCP:5.0.1"
     implementation 'com.jeff-media:custom-block-data:2.2.2'
 }
@@ -36,7 +36,7 @@ shadowJar {
     relocate 'com.jeff_media.customblockdata', 'de.mcterranova.libs.customblockdata'
 }
 
-def targetJavaVersion = 17
+def targetJavaVersion = 21
 java {
     def javaVersion = JavaVersion.toVersion(targetJavaVersion)
     sourceCompatibility = javaVersion
