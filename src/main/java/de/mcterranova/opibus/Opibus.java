@@ -1,5 +1,6 @@
 package de.mcterranova.opibus;
 
+import com.jeff_media.customblockdata.CustomBlockData;
 import de.mcterranova.bona.lib.YMLHandler;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -20,6 +21,9 @@ public final class Opibus extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        //Listener der bei Pistenbewegung/Abbau des Blocks die Blockdata mitnimmt/löscht
+        CustomBlockData.registerListener(this);
+
         randomGenerator = new Random();
         instance = this;
         logger = getLogger();
