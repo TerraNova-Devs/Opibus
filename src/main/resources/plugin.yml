@@ -1,4 +1,6 @@
 name: Opibus
 version: '${version}'
-main: org.opibus.Opibus
+main: de.mcterranova.opibus.Opibus
 api-version: '1.21'
+softdepend:
+  - Bona

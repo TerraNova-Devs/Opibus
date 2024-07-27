@@ -1,35 +1,32 @@
-package org.opibus;
+package de.mcterranova.opibus;
 
+import de.mcterranova.bona.lib.YMLHandler;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
-import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.opibus.database.HikariCP;
-import org.opibus.silver.listener.BlockPlaceListener;
-import org.opibus.silver.logic.SilverManager;
-import org.opibus.utils.YMLHandler;
+import de.mcterranova.opibus.database.HikariCP;
+import de.mcterranova.opibus.silver.BlockPlaceListener;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.Random;
 import java.util.logging.Logger;
 
 public final class Opibus extends JavaPlugin {
 
-    HikariCP hikari;
-    Logger logger;
     public static Random randomGenerator;
     public static YMLHandler groupData;
     public static Opibus instance;
+    HikariCP hikari;
+    Logger logger;
 
     @Override
     public void onEnable() {
         randomGenerator = new Random();
-        SilverManager.init();
         instance = this;
         logger = getLogger();
 
         getConfig().options().copyDefaults();
         saveDefaultConfig();
+
 
         /*
         try {

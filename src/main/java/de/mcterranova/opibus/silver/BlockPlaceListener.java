@@ -1,22 +1,19 @@
-package org.opibus.silver.listener;
+package de.mcterranova.opibus.silver;
 
 import com.jeff_media.customblockdata.CustomBlockData;
+import de.mcterranova.opibus.Opibus;
+import de.mcterranova.bona.api.silver.SilverManager;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.block.Block;
-import org.bukkit.configuration.serialization.ConfigurationSerializable;
-import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
-import org.jetbrains.annotations.NotNull;
-import org.opibus.Opibus;
-import org.opibus.silver.logic.SilverManager;
 
-import java.util.*;
+import java.util.Map;
 
 public class BlockPlaceListener implements Listener {
 
@@ -29,7 +26,6 @@ public class BlockPlaceListener implements Listener {
         key = new NamespacedKey(plugin, "wasPlaced");
     }
 
-    
     @EventHandler
     public void onBlockPlace(BlockPlaceEvent event) {
         if (!isPresent(event.getBlockPlaced().getType()) || isExcluded(event.getBlock().getType()))
@@ -47,7 +43,7 @@ public class BlockPlaceListener implements Listener {
         Material material = event.getBlock().getType();
         if (!isPresent(material))
             return;
-        SilverManager.get().roll(getProbability(material), block.getLocation());
+        SilverManager.roll(getProbability(material), block.getLocation());
     }
 
     public boolean isPresent(Material material) {
