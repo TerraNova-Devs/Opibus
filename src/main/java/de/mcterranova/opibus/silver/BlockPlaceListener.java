@@ -2,7 +2,7 @@ package de.mcterranova.opibus.silver;
 
 import com.jeff_media.customblockdata.CustomBlockData;
 import de.mcterranova.opibus.Opibus;
-import de.mcterranova.bona.api.silver.SilverManager;
+import de.mcterranova.opibus.lib.SilverManager;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.block.Block;
@@ -43,7 +43,9 @@ public class BlockPlaceListener implements Listener {
         Material material = event.getBlock().getType();
         if (!isPresent(material))
             return;
-        SilverManager.roll(getProbability(material), block.getLocation());
+        if(SilverManager.roll(getProbability(material))){
+            SilverManager.generate(block.getLocation());
+        }
     }
 
     public boolean isPresent(Material material) {

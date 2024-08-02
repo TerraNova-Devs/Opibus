@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Nations.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Nations.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Opibus.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Opibus.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/de.mcterranova.opibus.Opibus.main.iml" filepath="$PROJECT_DIR$/.idea/modules/de.mcterranova.opibus.Opibus.main.iml" />
     </modules>
   </component>
 </project>
