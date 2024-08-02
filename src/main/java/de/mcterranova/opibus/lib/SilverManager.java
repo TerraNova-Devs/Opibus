@@ -2,10 +2,7 @@ package de.mcterranova.opibus.lib;
 
 import de.mcterranova.opibus.Opibus;
 import de.mcterranova.opibus.lib.Chat;
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.Sound;
-import org.bukkit.World;
+import org.bukkit.*;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
@@ -23,6 +20,7 @@ public class SilverManager {
         if (chance <= 0) {
             return false; // Prevent invalid values and division by zero
         }
+        Bukkit.getServer().sendMessage(Chat.blueFade("rolled with chance " + chance));
         return Opibus.randomGenerator.nextInt(chance) == 0;
     }
 

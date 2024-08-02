@@ -2,7 +2,9 @@ package de.mcterranova.opibus.silver;
 
 import com.jeff_media.customblockdata.CustomBlockData;
 import de.mcterranova.opibus.Opibus;
+import de.mcterranova.opibus.lib.Chat;
 import de.mcterranova.opibus.lib.SilverManager;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.block.Block;
@@ -36,6 +38,7 @@ public class BlockPlaceListener implements Listener {
 
     @EventHandler
     public void onBlockBreak(BlockBreakEvent event) {
+        Bukkit.getServer().sendMessage(Chat.blueFade("Pommes"));
         Block block = event.getBlock();
         PersistentDataContainer customBlockData = new CustomBlockData(block, plugin);
         if (customBlockData.has(key, PersistentDataType.BOOLEAN))
@@ -43,7 +46,9 @@ public class BlockPlaceListener implements Listener {
         Material material = event.getBlock().getType();
         if (!isPresent(material))
             return;
+        Bukkit.getServer().sendMessage(Chat.blueFade("Mayo"));
         if(SilverManager.roll(getProbability(material))){
+            Bukkit.getServer().sendMessage(Chat.blueFade("Hit"));
             SilverManager.generate(block.getLocation());
         }
     }
