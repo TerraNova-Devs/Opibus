@@ -20,7 +20,6 @@ public class SilverManager {
         if (chance <= 0) {
             return false; // Prevent invalid values and division by zero
         }
-        Bukkit.getServer().sendMessage(Chat.blueFade("rolled with chance " + chance));
         return Opibus.randomGenerator.nextInt(chance) == 0;
     }
 

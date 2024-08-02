@@ -38,7 +38,6 @@ public class BlockPlaceListener implements Listener {
 
     @EventHandler
     public void onBlockBreak(BlockBreakEvent event) {
-        Bukkit.getServer().sendMessage(Chat.blueFade("Pommes"));
         Block block = event.getBlock();
         PersistentDataContainer customBlockData = new CustomBlockData(block, plugin);
         if (customBlockData.has(key, PersistentDataType.BOOLEAN))
@@ -46,9 +45,7 @@ public class BlockPlaceListener implements Listener {
         Material material = event.getBlock().getType();
         if (!isPresent(material))
             return;
-        Bukkit.getServer().sendMessage(Chat.blueFade("Mayo"));
         if(SilverManager.roll(getProbability(material))){
-            Bukkit.getServer().sendMessage(Chat.blueFade("Hit"));
             SilverManager.generate(block.getLocation());
         }
     }
