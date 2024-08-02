@@ -32,7 +32,7 @@ public class SilverManager {
     public static void generate(Location location) {
         World world = location.getWorld();
         location.getWorld().dropItemNaturally(new Location(world, location.getBlockX(), location.getBlockY(), location.getBlockZ()), placeholder());
-        world.playSound(location, Sound.BLOCK_BELL_RESONATE, 2, 14);
+        //world.playSound(location, Sound.BLOCK_BELL_RESONATE, 2, 14);
     }
     /**
      * sets the {@link ItemStack} placeholder which will be used instead of the default {@link ItemStack} placeholder
