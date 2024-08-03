@@ -55,27 +55,30 @@ public class BlockPlaceListener implements Listener {
     public boolean isPresent(Material material) {
         Map<String, Object> data = Opibus.groupData.modifyFile.getConfigurationSection("groups").getValues(false);
         for (Object object : data.values()) {
-            String[] array = ((String) object).split(",");
+            String rawData = ((String) object);
+            String[] array = rawData.substring(1, rawData.length() - 1).split(",");
             List<String> list = Arrays.asList(array);
-            if (list.contains(material.name()))
+            if (list.contains(material.toString()))
                 return true;
         }
         return false;
     }
 
     public boolean isExcluded(Material material) {
-        String[] data = ((String) Opibus.groupData.modifyFile.get("excluded")).split(",");
+        String rawData = ((String) Opibus.groupData.modifyFile.get("excluded"));
+        String[] data = rawData.substring(1, rawData.length() - 1).split(",");
         List<String> list = Arrays.asList(data);
 
-        return list.contains(material.name());
+        return list.contains(material.toString());
     }
 
     public int getProbability(Material material) {
         Map<String, Object> data = Opibus.groupData.modifyFile.getConfigurationSection("groups").getValues(false);
         for (String rawChance : data.keySet()) {
-            String[] array = ((String) data.get(rawChance)).split(",");
+            String rawData = ((String) data.get(rawChance));
+            String[] array = rawData.substring(1, rawData.length() - 1).split(",");
             List<String> list = Arrays.asList(array);
-            if (list.contains((material.name())))
+            if (list.contains((material.toString())))
                 return Integer.parseInt(rawChance);
         }
         return 0;
