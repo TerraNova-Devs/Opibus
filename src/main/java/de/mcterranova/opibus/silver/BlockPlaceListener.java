@@ -15,6 +15,8 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 public class BlockPlaceListener implements Listener {
@@ -53,7 +55,8 @@ public class BlockPlaceListener implements Listener {
     public boolean isPresent(Material material) {
         Map<String, Object> data = Opibus.groupData.modifyFile.getConfigurationSection("groups").getValues(false);
         for (Object object : data.values()) {
-            String list = (String) object;
+            String[] array = ((String) object).split(",");
+            List<String> list = Arrays.asList(array);
             if (list.contains(material.name()))
                 return true;
         }
@@ -61,15 +64,18 @@ public class BlockPlaceListener implements Listener {
     }
 
     public boolean isExcluded(Material material) {
-        String data = (String) Opibus.groupData.modifyFile.get("excluded");
-        return data.contains(material.name());
+        String[] data = ((String) Opibus.groupData.modifyFile.get("excluded")).split(",");
+        List<String> list = Arrays.asList(data);
+
+        return list.contains(material.name());
     }
 
     public int getProbability(Material material) {
         Map<String, Object> data = Opibus.groupData.modifyFile.getConfigurationSection("groups").getValues(false);
         for (String rawChance : data.keySet()) {
-            String list = (String) data.get(rawChance);
-            if (list.contains(material.name()))
+            String[] array = ((String) data.get(rawChance)).split(",");
+            List<String> list = Arrays.asList(array);
+            if (list.contains((material.name())))
                 return Integer.parseInt(rawChance);
         }
         return 0;
