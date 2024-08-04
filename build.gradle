@@ -33,6 +33,7 @@ dependencies {
 
 shadowJar {
     relocate 'com.jeff_media.customblockdata', 'de.mcterranova.libs.customblockdata'
+    destinationDirectory.set(file("./testserver/plugins"))
 }
 
 def targetJavaVersion = 21

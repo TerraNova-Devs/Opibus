@@ -1,0 +1,66 @@
+[01:49:34] [ServerMain/INFO]: [bootstrap] Running Java 21 (Java HotSpot(TM) 64-Bit Server VM 21.0.3+7-LTS-152; Oracle Corporation null) on Windows 11 10.0 (amd64)
+[01:49:34] [ServerMain/INFO]: [bootstrap] Loading Paper 1.21-123-master@0a1be9a (2024-07-31T02:57:35Z) for Minecraft 1.21
+[01:49:34] [ServerMain/WARN]: [oshi.driver.windows.perfmon.PerfmonDisabled] Invalid registry value type detected for PerfOS counters. Should be REG_DWORD. Ignoring: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfOS\Performance\Disable Performance Counters.
+[01:49:34] [ServerMain/INFO]: [PluginInitializerManager] Initializing plugins...
+[01:49:35] [ServerMain/INFO]: [PluginInitializerManager] Initialized 0 plugins
+[01:49:39] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[01:49:40] [ServerMain/INFO]: Loaded 1290 recipes
+[01:49:40] [ServerMain/INFO]: Loaded 1399 advancements
+[01:49:41] [Server thread/INFO]: Starting minecraft server version 1.21
+[01:49:41] [Server thread/INFO]: Loading properties
+[01:49:41] [Server thread/INFO]: This server is running Paper version 1.21-123-master@0a1be9a (2024-07-31T02:57:35Z) (Implementing API version 1.21-R0.1-SNAPSHOT)
+[01:49:41] [Server thread/INFO]: [spark] This server bundles the spark profiler. For more information please visit https://docs.papermc.io/paper/profiling
+[01:49:41] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[01:49:41] [Server thread/INFO]: Using 4 threads for Netty based IO
+[01:49:42] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 6 worker threads, and population gen parallelism of 6 threads
+[01:49:42] [Server thread/INFO]: Default game type: SURVIVAL
+[01:49:42] [Server thread/INFO]: Generating keypair
+[01:49:42] [Server thread/INFO]: Starting Minecraft server on *:25565
+[01:49:42] [Server thread/INFO]: Using default channel type
+[01:49:42] [Server thread/INFO]: Paper: Using Java compression from Velocity.
+[01:49:42] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[01:49:42] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[01:49:42] [Server thread/INFO]: Preparing level "world"
+[01:49:43] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[01:49:44] [Server thread/INFO]: Time elapsed: 884 ms
+[01:49:44] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[01:49:44] [Server thread/INFO]: Time elapsed: 131 ms
+[01:49:44] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[01:49:44] [Server thread/INFO]: Time elapsed: 50 ms
+[01:49:44] [Server thread/INFO]: [spark] Starting background profiler...
+[01:49:44] [Server thread/INFO]: [spark] The async-profiler engine is not supported for your os/arch (windows11/amd64), so the built-in Java engine will be used instead.
+[01:49:44] [Server thread/INFO]: Done preparing level "world" (1.634s)
+[01:49:44] [Server thread/INFO]: Running delayed init tasks
+[01:49:44] [Server thread/INFO]: Done (10.952s)! For help, type "help"
+[01:49:44] [Server thread/INFO]: Timings Reset
+[01:49:46] [User Authenticator #0/INFO]: UUID of player Nekyiaa is a8231bb7-b5fe-4de7-ac11-1c9b4c7bb467
+[01:49:47] [Server thread/INFO]: Nekyiaa joined the game
+[01:49:47] [Server thread/INFO]: Nekyiaa[/127.0.0.1:58443] logged in with entity id 331 at ([world]-6.5, 129.0, 5.5)
+[01:50:07] [Server thread/INFO]: Made Nekyiaa a server operator
+[01:50:12] [Server thread/INFO]: Nekyiaa issued server command: /gamemode creative
+[01:50:12] [Server thread/INFO]: [Nekyiaa: Set own game mode to Creative Mode]
+[01:50:21] [Server thread/INFO]: Nekyiaa issued server command: /pl
+[01:50:31] [Server thread/INFO]: Stopping server
+[01:50:31] [Server thread/INFO]: Saving players
+[01:50:31] [Server thread/INFO]: Nekyiaa lost connection: Server closed
+[01:50:31] [Server thread/INFO]: Nekyiaa left the game
+[01:50:31] [Server thread/INFO]: Saving worlds
+[01:50:31] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[01:50:32] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
+[01:50:32] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
+[01:50:32] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
+[01:50:33] [Server thread/INFO]: [ChunkHolderManager] Saved 2209 block chunks, 625 entity chunks, 0 poi chunks in world 'world' in 1,46s
+[01:50:33] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
+[01:50:33] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
+[01:50:33] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
+[01:50:33] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
+[01:50:33] [Server thread/INFO]: [ChunkHolderManager] Saved 49 block chunks, 49 entity chunks, 0 poi chunks in world 'world_nether' in 0,06s
+[01:50:33] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
+[01:50:33] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_the_end'
+[01:50:33] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_the_end'
+[01:50:33] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_the_end'
+[01:50:33] [Server thread/INFO]: [ChunkHolderManager] Saved 49 block chunks, 49 entity chunks, 0 poi chunks in world 'world_the_end' in 0,03s
+[01:50:33] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[01:50:33] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[01:50:33] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[01:50:33] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
