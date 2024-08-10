@@ -56,7 +56,7 @@ public class BlockPlaceListener implements Listener {
         Map<String, Object> data = Opibus.groupData.modifyFile.getConfigurationSection("groups").getValues(false);
         for (Object object : data.values()) {
             String rawData = ((String) object);
-            String[] array = rawData.substring(1, rawData.length() - 1).split(",");
+            String[] array = rawData.substring(1, rawData.length() - 1).split(", ");
             List<String> list = Arrays.asList(array);
             if (list.contains(material.toString()))
                 return true;
@@ -66,7 +66,7 @@ public class BlockPlaceListener implements Listener {
 
     public boolean isExcluded(Material material) {
         String rawData = ((String) Opibus.groupData.modifyFile.get("excluded"));
-        String[] data = rawData.substring(1, rawData.length() - 1).split(",");
+        String[] data = rawData.substring(1, rawData.length() - 1).split(", ");
         List<String> list = Arrays.asList(data);
 
         return list.contains(material.toString());
@@ -76,7 +76,7 @@ public class BlockPlaceListener implements Listener {
         Map<String, Object> data = Opibus.groupData.modifyFile.getConfigurationSection("groups").getValues(false);
         for (String rawChance : data.keySet()) {
             String rawData = ((String) data.get(rawChance));
-            String[] array = rawData.substring(1, rawData.length() - 1).split(",");
+            String[] array = rawData.substring(1, rawData.length() - 1).split(", ");
             List<String> list = Arrays.asList(array);
             if (list.contains((material.toString())))
                 return Integer.parseInt(rawChance);
