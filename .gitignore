@@ -2,3 +2,15 @@
 /.gradle/
 /build/
 /build/classes/java/main/
+
+#testserver
+/testserver/*
+!/testserver/paper-1.21-123.jar
+!/testserver/eula.txt
+!/testserver/start.bat
+
+!/testserver/plugins/
+/testserver/plugins/**/
+
+# Project exlude data types
+*.env

@@ -55,7 +55,7 @@ public final class Opibus extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        groupData.unloadYAML();
+
     }
 
     /*
