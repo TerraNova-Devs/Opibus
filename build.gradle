@@ -23,12 +23,17 @@ repositories {
     maven {
         url "https://plugins.gradle.org/m2/"
     }
+    maven {
+        name = "Oraxen"
+        url "https://repo.oraxen.com/releases"
+    }
 }
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21-R0.1-SNAPSHOT")
     implementation "com.zaxxer:HikariCP:5.0.1"
     implementation 'com.jeff-media:custom-block-data:2.2.2'
+    compileOnly 'io.th0rgal:oraxen:1.180.0'
 }
 
 shadowJar {

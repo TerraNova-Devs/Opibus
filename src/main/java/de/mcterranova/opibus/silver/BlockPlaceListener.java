@@ -4,9 +4,8 @@ import com.jeff_media.customblockdata.CustomBlockData;
 import de.mcterranova.opibus.Opibus;
 import de.mcterranova.opibus.lib.Chat;
 import de.mcterranova.opibus.lib.SilverManager;
-import org.bukkit.Bukkit;
-import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
+import io.th0rgal.oraxen.api.OraxenItems;
+import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -48,7 +47,8 @@ public class BlockPlaceListener implements Listener {
         if (!isPresent(material))
             return;
         if(SilverManager.roll(getProbability(material))){
-            SilverManager.generate(block.getLocation());
+            World world = block.getLocation().getWorld();
+            block.getLocation().getWorld().dropItemNaturally(new Location(world, block.getLocation().getBlockX(), block.getLocation().getBlockY(), block.getLocation().getBlockZ()), OraxenItems.getItemById("terranova_silver").build());
         }
     }
 

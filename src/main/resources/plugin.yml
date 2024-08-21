@@ -6,3 +6,4 @@ authors: [sakubami, gerryxn]
 prefix: TerraNova
 website: mcterranova.de
 description: Plugin dedicated to the economy.
+depend: [Oraxen]
