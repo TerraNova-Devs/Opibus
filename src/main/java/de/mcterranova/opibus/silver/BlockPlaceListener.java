@@ -1,6 +1,11 @@
 package de.mcterranova.opibus.silver;
 
 import com.jeff_media.customblockdata.CustomBlockData;
+import com.sk89q.worldedit.bukkit.BukkitAdapter;
+import com.sk89q.worldguard.WorldGuard;
+import com.sk89q.worldguard.protection.ApplicableRegionSet;
+import com.sk89q.worldguard.protection.managers.RegionManager;
+import com.sk89q.worldguard.protection.regions.RegionContainer;
 import de.mcterranova.opibus.Opibus;
 import de.mcterranova.opibus.lib.Chat;
 import de.mcterranova.opibus.lib.SilverManager;
@@ -39,6 +44,16 @@ public class BlockPlaceListener implements Listener {
 
     @EventHandler
     public void onBlockBreak(BlockBreakEvent event) {
+
+        //So dass in Worldguard Regionen kein Silber droppt
+        com.sk89q.worldedit.util.Location loc = BukkitAdapter.adapt(event.getPlayer().getLocation());
+        RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
+        RegionManager regions = container.get(BukkitAdapter.adapt(event.getPlayer().getWorld()));
+        if(regions != null) {
+            ApplicableRegionSet set = regions.getApplicableRegions(loc.toVector().toBlockPoint());
+            if(set.size() >= 1) return;
+        }
+
         Block block = event.getBlock();
         PersistentDataContainer customBlockData = new CustomBlockData(block, plugin);
         if (customBlockData.has(key, PersistentDataType.BOOLEAN))

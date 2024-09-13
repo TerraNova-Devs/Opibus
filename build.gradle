@@ -21,6 +21,10 @@ repositories {
         url = "https://oss.sonatype.org/content/groups/public/"
     }
     maven {
+        name = 'enginehub-repo'
+        url = 'https://maven.enginehub.org/repo/'
+    }
+    maven {
         url "https://plugins.gradle.org/m2/"
     }
     maven {
@@ -34,6 +38,8 @@ dependencies {
     implementation "com.zaxxer:HikariCP:5.0.1"
     implementation 'com.jeff-media:custom-block-data:2.2.2'
     compileOnly 'io.th0rgal:oraxen:1.180.0'
+    compileOnly fileTree(dir: 'jars', include: ['*.jar'])
+    compileOnly('com.sk89q.worldguard:worldguard-bukkit:7.0.11-SNAPSHOT')
 }
 
 shadowJar {
