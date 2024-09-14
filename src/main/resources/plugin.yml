@@ -7,3 +7,4 @@ prefix: TerraNova
 website: mcterranova.de
 description: Plugin dedicated to the economy.
 depend: [Oraxen]
+softdepend: [WorldGuard]

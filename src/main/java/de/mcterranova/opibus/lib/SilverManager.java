@@ -1,7 +1,7 @@
 package de.mcterranova.opibus.lib;
 
 import de.mcterranova.opibus.Opibus;
-import de.mcterranova.opibus.lib.Chat;
+import de.mcterranova.terranovaLib.utils.Chat;
 import org.bukkit.*;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;

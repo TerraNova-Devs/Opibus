@@ -3,6 +3,9 @@
 /build/
 /build/classes/java/main/
 
+#Project exlude files
+gradle.properties
+
 #testserver
 /testserver/*
 !/testserver/paper-1.21-123.jar
@@ -14,3 +17,5 @@
 
 # Project exlude data types
 *.env
+
+

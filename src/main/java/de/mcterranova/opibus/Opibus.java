@@ -1,10 +1,10 @@
 package de.mcterranova.opibus;
 
 import com.jeff_media.customblockdata.CustomBlockData;
-import de.mcterranova.opibus.lib.YMLHandler;
 import de.mcterranova.opibus.lib.SilverManager;
 import de.mcterranova.opibus.database.HikariCP;
 import de.mcterranova.opibus.silver.BlockPlaceListener;
+import de.mcterranova.terranovaLib.utils.YMLHandler;
 import io.th0rgal.oraxen.api.OraxenItems;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -23,7 +23,7 @@ public final class Opibus extends JavaPlugin {
 
     @Override
     public void onEnable() {
-
+        if(Bukkit.getPluginManager().isPluginEnabled("WorldGuard")) DependencyChecker.worldguard = true;
         //Listener der bei Pistenbewegung/Abbau des Blocks die Blockdata mitnimmt/löscht
         CustomBlockData.registerListener(this);
 

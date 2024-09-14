@@ -6,8 +6,8 @@ import com.sk89q.worldguard.WorldGuard;
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
 import com.sk89q.worldguard.protection.managers.RegionManager;
 import com.sk89q.worldguard.protection.regions.RegionContainer;
+import de.mcterranova.opibus.DependencyChecker;
 import de.mcterranova.opibus.Opibus;
-import de.mcterranova.opibus.lib.Chat;
 import de.mcterranova.opibus.lib.SilverManager;
 import io.th0rgal.oraxen.api.OraxenItems;
 import org.bukkit.*;
@@ -46,12 +46,14 @@ public class BlockPlaceListener implements Listener {
     public void onBlockBreak(BlockBreakEvent event) {
 
         //So dass in Worldguard Regionen kein Silber droppt
-        com.sk89q.worldedit.util.Location loc = BukkitAdapter.adapt(event.getPlayer().getLocation());
-        RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
-        RegionManager regions = container.get(BukkitAdapter.adapt(event.getPlayer().getWorld()));
-        if(regions != null) {
-            ApplicableRegionSet set = regions.getApplicableRegions(loc.toVector().toBlockPoint());
-            if(set.size() > 1) return;
+        if(DependencyChecker.worldguard) {
+            com.sk89q.worldedit.util.Location loc = BukkitAdapter.adapt(event.getPlayer().getLocation());
+            RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
+            RegionManager regions = container.get(BukkitAdapter.adapt(event.getPlayer().getWorld()));
+            if(regions != null) {
+                ApplicableRegionSet set = regions.getApplicableRegions(loc.toVector().toBlockPoint());
+                if(set.size() >= 1) return;
+            }
         }
 
         Block block = event.getBlock();
