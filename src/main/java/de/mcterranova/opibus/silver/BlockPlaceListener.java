@@ -51,7 +51,7 @@ public class BlockPlaceListener implements Listener {
         RegionManager regions = container.get(BukkitAdapter.adapt(event.getPlayer().getWorld()));
         if(regions != null) {
             ApplicableRegionSet set = regions.getApplicableRegions(loc.toVector().toBlockPoint());
-            if(set.size() >= 1) return;
+            if(set.size() > 1) return;
         }
 
         Block block = event.getBlock();
