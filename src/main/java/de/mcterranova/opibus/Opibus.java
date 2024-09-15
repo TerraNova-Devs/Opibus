@@ -30,7 +30,6 @@ public final class Opibus extends JavaPlugin {
         randomGenerator = new Random();
         instance = this;
         logger = getLogger();
-
         getConfig().options().copyDefaults();
         saveDefaultConfig();
 

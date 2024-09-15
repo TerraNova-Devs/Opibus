@@ -6,6 +6,15 @@ plugins {
 group = 'de.mcterranova.opibus'
 version = '1.0.0'
 
+
+def envProperties = new Properties()
+def envPropertiesFile = file('private.env')
+envPropertiesFile.withReader('UTF-8') { reader ->
+    envProperties.load(reader)
+}
+
+
+
 repositories {
     mavenCentral()
     maven {
@@ -35,8 +44,8 @@ repositories {
         name = "github"
         url = "https://maven.pkg.github.com/TerraNova-Devs/TerranovaLib"
         credentials {
-            username = project.findProperty("gpr.user")
-            password = project.findProperty("gpr.token")
+            username = project.findProperty(envProperties.getProperty('githubUser'))
+            password = project.findProperty(envProperties.getProperty('githubToken'))
         }
     }
 }

@@ -4,7 +4,6 @@
 /build/classes/java/main/
 
 #Project exlude files
-gradle.properties
 
 #testserver
 /testserver/*
@@ -15,7 +14,7 @@ gradle.properties
 !/testserver/plugins/
 /testserver/plugins/**/
 
-# Project exlude data types
+# Project exlude file types
 *.env
 
 
