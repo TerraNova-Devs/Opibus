@@ -1,6 +1,7 @@
 package de.mcterranova.opibus.silver;
 
 import com.jeff_media.customblockdata.CustomBlockData;
+import com.nexomc.nexo.api.NexoItems;
 import com.sk89q.worldedit.bukkit.BukkitAdapter;
 import com.sk89q.worldguard.WorldGuard;
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
@@ -9,7 +10,6 @@ import com.sk89q.worldguard.protection.regions.RegionContainer;
 import de.mcterranova.opibus.DependencyChecker;
 import de.mcterranova.opibus.Opibus;
 import de.mcterranova.opibus.lib.SilverManager;
-import io.th0rgal.oraxen.api.OraxenItems;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
@@ -65,7 +65,7 @@ public class BlockPlaceListener implements Listener {
             return;
         if(SilverManager.roll(getProbability(material))){
             World world = block.getLocation().getWorld();
-            block.getLocation().getWorld().dropItemNaturally(new Location(world, block.getLocation().getBlockX(), block.getLocation().getBlockY(), block.getLocation().getBlockZ()), OraxenItems.getItemById("terranova_silver").build());
+            block.getLocation().getWorld().dropItemNaturally(new Location(world, block.getLocation().getBlockX(), block.getLocation().getBlockY(), block.getLocation().getBlockZ()), NexoItems.itemFromId("terranova_silver").build());
         }
     }
 

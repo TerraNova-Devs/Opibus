@@ -1,10 +1,10 @@
 name: Opibus
 version: 1.0.0-SNAPSHOT
 main: de.mcterranova.opibus.Opibus
-api-version: '1.21'
+api-version: '1.21.4'
 authors: [sakubami, gerryxn]
 prefix: TerraNova
 website: mcterranova.de
 description: Plugin dedicated to the economy.
-depend: [Oraxen]
+depend: [Nexo]
 softdepend: [WorldGuard]
