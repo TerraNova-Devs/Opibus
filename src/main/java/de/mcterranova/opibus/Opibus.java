@@ -5,6 +5,7 @@ import de.mcterranova.opibus.lib.SilverManager;
 import de.mcterranova.opibus.database.HikariCP;
 import de.mcterranova.opibus.silver.BlockPlaceListener;
 import de.mcterranova.opibus.lib.YMLHandler;
+import de.mcterranova.opibus.silver.FishingListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -51,6 +52,7 @@ public final class Opibus extends JavaPlugin {
 
     public void listenerRegistry() {
         Bukkit.getPluginManager().registerEvents(new BlockPlaceListener(this), this);
+        Bukkit.getPluginManager().registerEvents(new FishingListener(this), this);
     }
 
     @Override
