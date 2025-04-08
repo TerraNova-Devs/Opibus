@@ -47,9 +47,9 @@ public class BlockPlaceListener implements Listener {
 
         //So dass in Worldguard Regionen kein Silber droppt
         if(DependencyChecker.worldguard) {
-            com.sk89q.worldedit.util.Location loc = BukkitAdapter.adapt(event.getPlayer().getLocation());
+            com.sk89q.worldedit.util.Location loc = BukkitAdapter.adapt(event.getBlock().getLocation());
             RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
-            RegionManager regions = container.get(BukkitAdapter.adapt(event.getPlayer().getWorld()));
+            RegionManager regions = container.get(BukkitAdapter.adapt(event.getBlock().getWorld()));
             if(regions != null) {
                 ApplicableRegionSet set = regions.getApplicableRegions(loc.toVector().toBlockPoint());
                 if(set.size() >= 1) return;
